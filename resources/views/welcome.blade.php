@@ -46,6 +46,11 @@
                 text-align: center;
             }
 
+			.content-left {
+                text-align: left;
+                padding: 0 100px;
+            }
+            
             .title {
                 font-size: 84px;
             }
@@ -66,27 +71,33 @@
         </style>
     </head>
     <body>
-        <h2>Display Sprint Finals Standings</h2>
-		<form id="form2" method="get" action="DisplaySprintFinals.php">
-			
-			
-			<p>Select a Class to view.</p>
-  			<p>
-    			@foreach ($classes as $class)
-	    			<div>
-	    				<input id="{{ $class->Name }}" type="checkbox">
-	    				<label for="{{ $class->Name }}">{{ $class->Name }}</label>
-	    			</div>
-    			@endforeach
-    			
-  			</p>
-  			
-  			<input name="FindValue" type="hidden" id="FindValue" value="">
-  			<input type="submit" value="Go" />
-  		
-		</form>
-		
-		<p class="footer">
-			Copyright &copy 2017 Sportstats all rights reserved
-		</p>    </body>
+    	<div class="flex-center position-ref full-height">
+    		<div class="content">
+		        <h2>Display Sprint Finals Standings</h2>
+				<form id="form2" method="get" action="DisplaySprintFinals.php">
+					
+					
+					<p>Select a Class to view.</p>
+		  			<p>
+		  				<div class="content-left">
+			    			@foreach ($classes as $class)
+				    			<div>
+				    				<input id="{{ $class->Name }}" type="checkbox" checked>
+				    				<label for="{{ $class->Name }}">{{ $class->Name }}</label>
+				    			</div>
+			    			@endforeach
+		  				</div>
+		  			</p>
+		  			
+		  			<input name="FindValue" type="hidden" id="FindValue" value="">
+		  			<input type="submit" value="Go" />
+		  		
+				</form>
+				
+				<p class="footer">
+					Copyright &copy 2017 Sportstats all rights reserved
+				</p>
+    		</div>
+    	</div>   
+	</body>
 </html>
