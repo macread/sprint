@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$classes = \App\Classes::all();
+    return view('welcome')->with('classes', $classes);
 });
